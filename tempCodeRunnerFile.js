@@ -1,2 +1,1 @@
-
-    // console.log(c[0])
+NaN
