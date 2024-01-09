@@ -1,0 +1,17 @@
+const shape = {
+    radius: 10,
+    diameter() {
+        return this.radius * 2;
+    },
+    perimeter: () =>
+        2 * 3.14 * this.radius
+    ,
+};
+
+console.log(shape.diameter()); // 20
+console.log(shape.perimeter()); // NaN as arrow function has no 
+
+// Note that the value of diameter is a regular function, whereas the value of perimeter is an arrow function.
+// With arrow functions, the this keyword refers to its current surrounding scope, unlike regular functions!
+// This means that when we call perimeter, it doesn't refer to the shape object, but to its surrounding scope (window for example).
+// There is no value radius on that object, which returns NaN.
